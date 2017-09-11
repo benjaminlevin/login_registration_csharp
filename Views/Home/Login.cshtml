@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div id='login'>
+    <h3>Sign In:</h3>
+    <p>Return to <a href='/'>Registration</a></p>
+    @model login_registration.Models.UserLogin
+    <form asp-controller="Home" asp-action="processlogin" id="form" method="post">
+        <label asp-for="Email"></label>
+        <input asp-for="Email"/>
+        <span asp-validation-for="Email"></span>
+        <br>
+        <label asp-for="Password"></label>
+        <input asp-for="Password"/>
+        <span asp-validation-for="Password"></span>
+        <p>@ViewBag.LoginError</p>
+        <button type="submit" id="submit">Sign In</button>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Success!";
+}
+
+<h1>Success...</h1>
+<h2>Hello, @ViewBag.Name!</h2>
+@{
+    foreach(var user in ViewBag.UserInfo)
+    {
+            <h6>ID: @user["id"]</h6>
+            <h6>First Name: @user["first_name"]</h6>
+            <h6>Last Name: @user["last_name"]</h6>
+            <h6>e-mail: @user["email"]</h6>
+            <h6>Password: @user["password"]</h6>
+    }
+}
+<p><a href="logout">Sign out</a></p>

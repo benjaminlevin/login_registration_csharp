@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Registration";
+}
+
+<div id='register'>
+    <h3>Register:</h3>
+    <p>Already registered? <a href='/login'>Sign In</a></p>
+    <p>@ViewBag.RegError</p>
+    @model login_registration.Models.User
+    <form asp-controller="Home" asp-action="Register" id="form" method="post">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName"/>
+        <span asp-validation-for="FirstName"></span>
+        <br>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName"/>
+        <span asp-validation-for="LastName"></span>
+        <br>
+        <label asp-for="Email"></label>
+        <input asp-for="Email"/>
+        <span asp-validation-for="Email"></span>
+        <br>
+        <label asp-for="Password"></label>
+        <input asp-for="Password"/>
+        <span asp-validation-for="Password"></span>
+        <br>
+        <label asp-for="PasswordConfirmation"></label>
+        <input asp-for="PasswordConfirmation"/>
+        <span asp-validation-for="PasswordConfirmation"></span>
+        <br>
+        <button type="submit" id="submit">Register</button>
+    </form>
+</div>
